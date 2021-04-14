@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React , { Component }  from 'react';
+import {Fragment} from 'react';
+import SignIn from '../src/Components/SignIn/SignIn';
+import UserProfile from '../src/Components/UserProfile/UserProfile';
+import { Switch , Route } from 'react-router-dom';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  
+  componentDidMount(){
+    const data = {
+      email: "pragyanshu.sharma@daffodilsw.com",
+      password:"Qwerty123@"
+    }
+
+    axios.post('http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/public/user/login', data)
+    .then(response => {console.log(response);})
+  }
+
+  render(){
+    return (
+      <Fragment>
+        <Switch>
+          <Route path="/user" component={UserProfile}/>
+          <Route path="/"  component={SignIn}/>
+        </Switch>    
+      </Fragment>
+    );
+  }
 }
+
 
 export default App;
