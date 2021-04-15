@@ -23,8 +23,9 @@ class App extends Component {
     return (
       <Fragment>
         <Switch>
-          <Route path="/user" component={UserProfile}/>
-          <Route path="/"  component={SignIn}/>
+          <Route path="/sign"  component={SignIn}/>
+          <Route path="/" component={UserProfile}/>
+          
         </Switch>    
       </Fragment>
     );
