@@ -1,18 +1,11 @@
 import { Fragment } from "react";
-import Logoimage from "../../assets/peekameet_logo.png";
 import "./UserProfile.css";
+import { Link } from "react-router-dom";
+import Footer from "../../Reusable_Components/Footer/Footer";
+import HeaderUser from "../../Reusable_Components/Header/HeaderUser/HeaderUser";
 
-import nav_home from "../../assets/nav-home.png";
 import nav_contacts from "../../assets/nav-contacts.png";
 import nav_messages from "../../assets/nav-messages.png";
-import nav_scan from "../../assets/nav-scan.png";
-import nav_movement from "../../assets/nav-movement.png";
-import nav_notification from "../../assets/nav-notifications.png";
-import nav_menu from "../../assets/nav-menu.png";
-import yt from "../../assets/yt.png";
-import tw from "../../assets/tw.png";
-import fb from "../../assets/fb.png";
-import ig from "../../assets/ig.png";
 import user_back from "../../assets/userbackground.png";
 import profile_picture from "../../assets/user.png";
 import more_options from "../../assets/more_options.png";
@@ -23,54 +16,8 @@ const UserProfile = () => {
   return (
     <Fragment>
       <div className="MainUser">
-        <header className="Userheader">
-          <div className="logoTitle">
-            <img src={Logoimage} alt="logo.png" />
-            <h3 className="UserTitle">PEEKaMEET</h3>
-          </div>
+        <HeaderUser />
 
-          <div className="Upperbar">
-            <div className="User-home">
-              <img src={nav_home} alt="home" />
-              &nbsp;&nbsp;
-              <h4>Home</h4>
-            </div>
-
-            <div className="User-contacts">
-              <img src={nav_contacts} alt="contact" />
-              &nbsp;&nbsp;
-              <h4>Contacts</h4>
-            </div>
-
-            <div className="User-messages">
-              <img src={nav_messages} alt="message" />
-              &nbsp;&nbsp;
-              <h4>Messages</h4>
-            </div>
-
-            <div className="User-scan">
-              <img src={nav_scan} alt="scan" />
-              &nbsp;&nbsp;
-              <h4>Scan</h4>
-            </div>
-
-            <div className="User-movement">
-              <img src={nav_movement} alt="movement" />
-              &nbsp;&nbsp;
-              <h4>The Movement</h4>
-            </div>
-
-            <div className="User-notifications">
-              <img src={nav_notification} alt="notification" />
-              &nbsp;&nbsp;
-              <h4>Notifications</h4>
-            </div>
-
-            <div className="User-menu">
-              <img src={nav_menu} alt="menu" />
-            </div>
-          </div>
-        </header>
         <div className="scroll">
           <div
             className="UserCard"
@@ -117,9 +64,11 @@ const UserProfile = () => {
                 <p>Details</p>
               </div>
 
-              <div className="User_notes">
-                <p>Notes</p>
-              </div>
+              <Link to="/user-notes">
+                <div className="User_notes">
+                  <p>Notes</p>
+                </div>
+              </Link>
             </div>
 
             <hr />
@@ -284,24 +233,7 @@ const UserProfile = () => {
             </div>
           </div>
         </div>
-        <footer>
-          <h4 className="footerText">PEEKaMEET©2020</h4>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <h4 className="footerText">Follow Us:</h4>
-          <img src={ig} alt="icon1" />
-          <img src={yt} alt="icon2" />
-          <img src={fb} alt="icon3" />
-          <img src={tw} alt="icon4" />
-          <h4 className="footerText">FAQs</h4>
-          <h4 className="footerText">Terms & Conditins</h4>
-          <h4 className="footerText">Privacy Policy</h4>
-          <h4 className="footerText">About Us</h4>
-          <h4 className="footerText">Press</h4>
-          <h4 className="footerText">Contact Us</h4>
-          <h4 className="footerText">Perks</h4>
-          <h4 className="footerText">Blog</h4>
-        </footer>
+        <Footer />
       </div>
     </Fragment>
   );

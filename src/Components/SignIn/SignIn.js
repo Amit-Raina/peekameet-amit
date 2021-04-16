@@ -1,25 +1,15 @@
 import { Fragment } from "react";
 import "./SignIn.css";
 import Mainimage from "../../assets/screenPhoto.png";
-import Logoimage from "../../assets/peekameet_logo.png";
-import yt from "../../assets/yt.png";
-import tw from "../../assets/tw.png";
-import fb from "../../assets/fb.png";
-import ig from "../../assets/ig.png";
 import { Link } from "react-router-dom";
+import Footer from '../../Reusable_Components/Footer/Footer';
+import HeaderSignIn from '../../Reusable_Components/Header/HeaderSignIn/HeaderSignIn';
 
 const SignIn = () => {
   return (
     <Fragment>
       <div className="Main">
-        <header>
-          <img src={Logoimage} alt="logo.img" className="Logoimg" />
-          <h3 className="Title">PEEKaMEET</h3>
-
-          <button className="Sign-In Rectangle1">Sign In</button>
-          <button className="Sign-Up Rectangle2">Sign Up</button>
-        </header>
-
+        <HeaderSignIn/>
         <div className="Screen">
           <div className="UserInfo">
             <h3 className="PEEKaMEET-lets-you-n">
@@ -121,7 +111,7 @@ const SignIn = () => {
             />
             <br />
             <br />
-            <Link to="/user">
+            <Link to="/user-details">
               <button className="ButtonSignin">Sign In</button>
             </Link>
 
@@ -146,8 +136,8 @@ const SignIn = () => {
             <img src={Mainimage} alt="Workimage" />
           </div>
         </div>
-
-        <footer>
+        <Footer/>
+        {/* <footer>
           <h4 className="footerText">PEEKaMEET©2020</h4>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -164,7 +154,7 @@ const SignIn = () => {
           <h4 className="footerText">Contact Us</h4>
           <h4 className="footerText">Perks</h4>
           <h4 className="footerText">Blog</h4>
-        </footer>
+        </footer> */}
       </div>
     </Fragment>
   );

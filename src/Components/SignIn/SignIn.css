@@ -4,7 +4,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  height: 100%;
+  height: 98%;
   width: 100%;
   background-image: linear-gradient(101deg, #14b349 -98%, #09a04f 198%);
 }
@@ -53,52 +53,6 @@
   width: 90%;
 }
 
-header {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  height: 56px;
-  /* background-color: rgb(230, 12, 12); */
-  padding-left: calc((100% - 1050px) / 2);
-  padding-right: calc((100% - 1050px) / 2);
-  align-items: center;
-}
-
-.Logoimg {
-  height: 100%;
-}
-.Title {
-  font-size: 18.8px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.4px;
-  color: #ffffff;
-}
-
-.Sign-In {
-  margin-left: auto;
-  font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #ffffff;
-}
-.Rectangle1 {
-  padding: 5px 15px 4px;
-  border-radius: 4px;
-  background-image: linear-gradient(92deg, #14b349 -109%, #09a04f 209%);
-  border: 0;
-}
-.Rectangle2 {
-  padding: 5px 15px 4px;
-  border-radius: 4px;
-  background-color: #ffffff;
-  border: 0;
-}
 .Sign-Up {
   font-size: 16px;
   font-weight: 500;
@@ -107,31 +61,6 @@ header {
   line-height: normal;
   letter-spacing: normal;
   color: #1cb54f;
-}
-
-footer {
-  display: flex;
-  height: 70px;
-  width: 100%;
-  background-color: white;
-  position: relative;
-  bottom: 0;
-  align-items: center;
-}
-
-.footerText {
-  height: 18px;
-  margin-left: 30px;
-  font-size: 14px;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #152d4e;
-}
-footer img {
-  margin-left: 15px;
 }
 
 .PEEKaMEET-lets-you-n {

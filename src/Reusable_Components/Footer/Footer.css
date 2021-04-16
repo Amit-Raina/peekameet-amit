@@ -1,0 +1,23 @@
+.Footer {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    bottom: 0;
+    align-items: center;
+  }
+.FooterText {
+    height: 18px;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #152d4e;
+  }
+.Footer img {
+    margin-left: 15px;
+  }

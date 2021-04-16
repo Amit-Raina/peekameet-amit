@@ -3,6 +3,7 @@ import React , { Component }  from 'react';
 import {Fragment} from 'react';
 import SignIn from '../src/Components/SignIn/SignIn';
 import UserProfile from '../src/Components/UserProfile/UserProfile';
+import UserNotes from '../src/Components/Notes/Notes';
 import { Switch , Route } from 'react-router-dom';
 import axios from 'axios';
 
@@ -22,11 +23,13 @@ class App extends Component {
   render(){
     return (
       <Fragment>
+
         <Switch>
-          <Route path="/sign"  component={SignIn}/>
-          <Route path="/" component={UserProfile}/>
-          
+          <Route path="/" exact  component={SignIn}/>
+          <Route path="/user-details" component={UserProfile}/>
+          <Route path="/user-notes"  component={UserNotes}/>
         </Switch>    
+        
       </Fragment>
     );
   }
