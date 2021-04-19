@@ -1,11 +1,37 @@
-import { Fragment } from "react";
+import { Fragment , Component } from "react";
 import "./SignIn.css";
 import Mainimage from "../../assets/screenPhoto.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Footer from '../../Reusable_Components/Footer/Footer';
 import HeaderSignIn from '../../Reusable_Components/Header/HeaderSignIn/HeaderSignIn';
 
-const SignIn = () => {
+class SignIn extends Component {
+
+  state = {
+    email:"",
+    password:""
+  }
+
+  getEmail = (value) => {
+    this.setState({
+      email: value
+    })
+  }
+
+  getPassword = (value) => {
+    this.setState({
+      password:value
+    })
+  }
+
+  signIn = () => {
+    
+  }
+
+render(){
+ 
+  
+
   return (
     <Fragment>
       <div className="Main">
@@ -88,6 +114,7 @@ const SignIn = () => {
             <br />
             <input
               type="email"
+              onChange={(event) => this.getEmail(event.target.value)}
               style={{
                 width: "100%",
                 border: "solid 1px #1cb54f",
@@ -102,6 +129,7 @@ const SignIn = () => {
             <br />
             <input
               type="password"
+              onChange={(event) => this.getPassword(event.target.value)}
               style={{
                 width: "100%",
                 border: "solid 1px #1cb54f",
@@ -111,9 +139,9 @@ const SignIn = () => {
             />
             <br />
             <br />
-            <Link to="/user-details">
-              <button className="ButtonSignin">Sign In</button>
-            </Link>
+      
+              <button className="ButtonSignin" onClick={this.signIn}>Sign In</button>
+            
 
             <div
               style={{
@@ -137,27 +165,11 @@ const SignIn = () => {
           </div>
         </div>
         <Footer/>
-        {/* <footer>
-          <h4 className="footerText">PEEKaMEET©2020</h4>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <h4 className="footerText">Follow Us:</h4>
-          <img src={ig} alt="icon1" />
-          <img src={yt} alt="icon2" />
-          <img src={fb} alt="icon3" />
-          <img src={tw} alt="icon4" />
-          <h4 className="footerText">FAQs</h4>
-          <h4 className="footerText">Terms & Conditins</h4>
-          <h4 className="footerText">Privacy Policy</h4>
-          <h4 className="footerText">About Us</h4>
-          <h4 className="footerText">Press</h4>
-          <h4 className="footerText">Contact Us</h4>
-          <h4 className="footerText">Perks</h4>
-          <h4 className="footerText">Blog</h4>
-        </footer> */}
+        
       </div>
     </Fragment>
   );
+            }
 };
 
 export default SignIn;
