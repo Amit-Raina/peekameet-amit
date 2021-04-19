@@ -10,7 +10,7 @@ import nav_movement from "../../../assets/nav-movement.png";
 import nav_notification from "../../../assets/nav-notifications.png";
 import nav_menu from "../../../assets/nav-menu.png";
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const HeaderUser = () => {
   return (
@@ -22,12 +22,13 @@ const HeaderUser = () => {
         </div>
 
         <div className="Upperbar">
+          <NavLink to="user-details" style={{textDecoration:"none"}}>
           <div className="User-home">
             <img src={nav_home} alt="home" />
             &nbsp;&nbsp;
             <h4>Home</h4>
           </div>
-
+          </NavLink>
           <div className="User-contacts">
             <img src={nav_contacts} alt="contact" />
             &nbsp;&nbsp;
@@ -58,11 +59,11 @@ const HeaderUser = () => {
             <h4>Notifications</h4>
           </div>
 
-          <Link to="/">
+          <NavLink to="/" style={{textDecoration:"none"}}>
             <div className="User-signout">
               <h4>Sign Out</h4>
             </div>
-          </Link>
+          </NavLink>
 
           <div className="User-menu">
             <img src={nav_menu} alt="menu" />

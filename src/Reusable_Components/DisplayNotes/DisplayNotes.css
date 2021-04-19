@@ -1,0 +1,40 @@
+.Display_Single_note {
+  border-left: 4px solid #1cb54f;
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.103);
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 96%;
+  height: 75px;
+  margin-bottom: 20px;
+}
+.Display_Content {
+  display: flex;
+}
+.Inside_text {
+  align-content: center;
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #152d4e;
+}
+
+.Inside_3dots {
+  margin-left: 15px;
+  margin-top: 25px;
+  margin-right: 5px;
+}
+.Inside_date {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9ea0a3;
+  margin-left: 15px;
+  margin-top: 5px;
+}

@@ -1,180 +1,38 @@
-.MainUser {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .scroll {
-    background-color: #f4f7f8;
-  }
-    
-  .UserCard {
-    margin: auto;
-    margin-top: 65px;
-    margin-bottom: 40px;
-    height: 82%;
-    width: 30%;
-    border: 1px solid #1cb54f;
-  }
-  
-  .user_profile {
-    width: 110px;
-    height: 110px;
-    margin-top: 9%;
-  }
-  
-  .more_options {
-    position: absolute;
-    top: 24%;
-    left: 62%;
-  }
-  
-  .User_Name_card {
-    font-size: 16px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #152d4e;
-  }
-  
-  .profile_buttons {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    color: #ffffff;
-  }
-  
-  .button_msg {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 0px;
-    background-image: linear-gradient(to bottom, #14b349, #09a04f);
-    font-weight: 100;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    border-radius: 3px;
-    margin-right: 4%;
-  }
-  
-  .button_save {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 180px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 0px;
-    background-image: linear-gradient(to bottom, #14b349, #09a04f);
-    font-weight: 100;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #ffffff;
-    border-radius: 3px;
-  }
-  
-  .User_toggle_options {
-    display: flex;
-    margin-top: 9px;
-  }
-  
-  .User_details {
-    margin-left: 10px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #152d4e;
-  }
+.MainUser{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
 
-  .User_notes {
-    margin-left: 10px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #152d4e;
-  }
+.Notes_Holder{
+  margin-left: 15px;
+  margin-top: 12px;
+}
 
-  .Notes_Holder{
-      margin-left: 15px;
-      margin-top: 12px;
-  }
-  .Edit_Notes{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      
-  }
-  .Edit_Notes_title{
-    font-size: 14px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #1cb54f;
-  }
-  .Notes_list{
-    margin-top: 20px;
-  }
-  .Display_Single_note{
-    border-left: 4px solid #1cb54f;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.103);
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px ;
-    width: 96%;
-    height: 75px;
-    margin-bottom: 20px;
-  }
-  .Display_Content{
-      display: flex;
-  }
-  .Inside_text{
-    align-content: center;  
-    margin-left: 15px;
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #152d4e;
-  }
+.Edit_Notes{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .Inside_3dots{
-    margin-left: 15px;
-    margin-top: 25px;
-    margin-right: 5px;
-  }
-  .Inside_date{
-    font-size: 12px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #9ea0a3;
-    margin-left: 15px;
-    margin-top: 5px;
-  }
+.Edit_Notes_title{
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #1cb54f;
+}
+
+.Notes_list{
+  margin-top: 20px;
+}
+  
   
 
   

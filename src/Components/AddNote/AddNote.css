@@ -1,0 +1,167 @@
+.MainAddNote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.scroll {
+  background-color: #f4f7f8;
+}
+
+.UserCard {
+  margin: auto;
+  margin-top: 65px;
+  margin-bottom: 40px;
+  height: 82%;
+  width: 30%;
+  border: 1px solid #1cb54f;
+  background-color: white;
+  /* height: 540px; */
+}
+
+.NoteTitle {
+  font-size: 16px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #152d4e;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #f4f7f8;
+}
+
+.AddNoteScreen {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.UserInfoNote {
+  display: flex;
+}
+.UserInfoNote img {
+  width: 30px;
+  height: 30px;
+}
+.UserInfoNote p {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #152d4e;
+  margin-left: 5px;
+}
+
+.NoteDetails {
+  display: flex;
+  align-items: center;
+}
+
+.FollowUp_note {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9ea0a3;
+}
+
+.Time_note {
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9ea0a3;
+}
+
+.FollowUp_Border {
+  /* width: 50px; */
+  border-bottom: 1px solid #9ea0a3;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+.FollowUp_Border input {
+  border: 0;
+
+  width: 90px;
+}
+
+.Time_Border {
+  /* width: 50px; */
+  border-bottom: 1px solid #9ea0a3;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+.Time_Border input {
+  border: 0;
+
+  width: 90px;
+}
+
+.Enter-Note-Text input {
+  border: 0;
+  height: 40px;
+  width: 98%;
+  border-bottom: 1px solid #9ea0a3;
+}
+.Enter-Note-Text p {
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9ea0a3;
+}
+
+.ButtonDiv {
+  margin-bottom: 270px;
+}
+
+.Cancel_Button {
+  height: 35px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #9ea0a3;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-color: white;
+  border: 0;
+}
+
+.Save_Button {
+  height: 35px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  background-image: linear-gradient(to bottom, #14b349, #09a04f);
+  border: 0;
+}
