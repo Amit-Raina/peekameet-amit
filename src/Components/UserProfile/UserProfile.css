@@ -54,7 +54,7 @@
   color: #9ea0a3;
 }
 
-.email_content {
+.user_contact_content {
   margin-top: 10px;
   background-color: rgba(28, 181, 79, 0.1);
   position: relative;
@@ -62,15 +62,15 @@
   width: 104%;
 }
 
-.email_content h4 {
-  font-size: 18px;
+.user_contact_content h4 {
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
   color: #1cb54f;
-  padding: 12px;
+  padding: 5px 10px 5px 20px;
 }
 
 .Bussiness_Address_details {

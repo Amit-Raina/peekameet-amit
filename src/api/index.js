@@ -1,15 +1,18 @@
 import axios from "axios";
 
-const data = {
-  email: "pragyanshu.sharma@daffodilsw.com",
-  password: "Qwerty123@",
-};
+// const data = {
+//   email: "pragyanshu.sharma@daffodilsw.com",
+//   password: "Qwerty123@",
+// };
 
-export function signIn() {
+export function signIn(email,password) {
   axios
     .post(
       "http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/public/user/login",
-      data
+      {
+        email:email,
+        password:password
+      }
     )
     .then((response) => {
       console.log(response);

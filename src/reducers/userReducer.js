@@ -1,9 +1,9 @@
-import {SIGNIN } from '../constants/index'
+import { SIGNINRESPONSE } from '../constants/index'
 
 function userReducer (state = null , action ){
     switch(action.type){
-        case SIGNIN : return {
-            ...action.user
+        case SIGNINRESPONSE : return {
+            ...action.user,
         }
         default: return state;
 

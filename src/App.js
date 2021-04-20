@@ -10,10 +10,8 @@ import AddNote from '../src/Components/AddNote/AddNote';
 
 import { Switch , Route } from 'react-router-dom';
 
-
 class App extends Component {
 
-  
   // componentDidMount(){
   //   const data = {
   //     createdFor:"5f3df18c72aad34d05e53903",
@@ -25,8 +23,9 @@ class App extends Component {
       //  getFollowUpNotes(data.createdFor,data.token);
 
   // }
-
+  
   render(){
+
     return (
       <Fragment>
 
@@ -41,6 +40,7 @@ class App extends Component {
     );
   }
 }
+
 
 
 export default App;

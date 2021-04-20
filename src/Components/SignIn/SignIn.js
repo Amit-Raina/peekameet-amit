@@ -1,175 +1,205 @@
-import { Fragment , Component } from "react";
+import { Fragment, Component } from "react";
 import "./SignIn.css";
 import Mainimage from "../../assets/screenPhoto.png";
-// import { Link } from "react-router-dom";
-import Footer from '../../Reusable_Components/Footer/Footer';
-import HeaderSignIn from '../../Reusable_Components/Header/HeaderSignIn/HeaderSignIn';
+// import { browserHistory } from 'react-router';
+// import Spinner from '../../Spinner/Spinner';
+import { Redirect } from "react-router-dom";
+import Footer from "../../Reusable_Components/Footer/Footer";
+import HeaderSignIn from "../../Reusable_Components/Header/HeaderSignIn/HeaderSignIn";
+import { getSignInDetails } from "../../actions/index";
+
+import { connect } from "react-redux";
 
 class SignIn extends Component {
-
   state = {
-    email:"",
-    password:""
-  }
+    email: "pragyanshu.sharma@daffodilsw.com",
+    password: "Qwerty123@",
+    redirect: "/",
+    loading:true
+  };
 
   getEmail = (value) => {
     this.setState({
-      email: value
-    })
-  }
+      email: value,
+    });
+  };
 
   getPassword = (value) => {
     this.setState({
-      password:value
-    })
-  }
+      password: value,
+    });
+  };
 
-  signIn = () => {
-    
-  }
+  getUserDetails = () => {
+    this.props.getSignInDetails(this.state.email, this.state.password);    
 
-render(){
- 
-  
+    setTimeout(() => {
+      if(this.props.userData.httpCode === 200){
+        this.setState({
+          redirect:"/user-details"
+        })
+      }
+    },3000)
+  };
 
-  return (
-    <Fragment>
-      <div className="Main">
-        <HeaderSignIn/>
-        <div className="Screen">
-          <div className="UserInfo">
-            <h3 className="PEEKaMEET-lets-you-n">
-              <b style={{ fontSize: "24px" }}>PEEKaMEET</b> lets you network
-              more effectively to achieve your business and career goals
-            </h3>
+  render() {
+    return (
+      <Fragment>
+        <div className="Main">
+          <HeaderSignIn />
+          <div className="Screen">
+            <div className="UserInfo">
+              <h3 className="PEEKaMEET-lets-you-n">
+                <b style={{ fontSize: "24px" }}>PEEKaMEET</b> lets you network
+                more effectively to achieve your business and career goals
+              </h3>
 
-            <div style={{ marginTop: "15px" }}>
-              <center>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#f17c2b",
-                    backgroundColor: "rgba(241, 124, 43, 0.18)",
-                  }}
-                >
-                  Freelancer
-                </span>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#96368f",
-                    backgroundColor: "rgba(150, 54, 143, 0.18)",
-                  }}
-                >
-                  Job Seeker
-                </span>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#1a9691",
-                    backgroundColor: "rgba(26, 150, 145, 0.18)",
-                  }}
-                >
-                  Enterpreneur
-                </span>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#e63183",
-                    backgroundColor: "rgba(230, 49, 131, 0.18)",
-                  }}
-                >
-                  Mompreneur
-                </span>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#0080af",
-                    backgroundColor: "rgba(0, 128, 175, 0.17)",
-                  }}
-                >
-                  Internship Seeker
-                </span>
-                <span
-                  className="Fields"
-                  style={{
-                    color: "#e7212c",
-                    backgroundColor: "rgba(231, 33, 44, 0.18)",
-                  }}
-                >
-                  Environmental Change Maker
-                </span>
+              <div style={{ marginTop: "15px" }}>
+                <center>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#f17c2b",
+                      backgroundColor: "rgba(241, 124, 43, 0.18)",
+                    }}
+                  >
+                    Freelancer
+                  </span>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#96368f",
+                      backgroundColor: "rgba(150, 54, 143, 0.18)",
+                    }}
+                  >
+                    Job Seeker
+                  </span>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#1a9691",
+                      backgroundColor: "rgba(26, 150, 145, 0.18)",
+                    }}
+                  >
+                    Enterpreneur
+                  </span>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#e63183",
+                      backgroundColor: "rgba(230, 49, 131, 0.18)",
+                    }}
+                  >
+                    Mompreneur
+                  </span>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#0080af",
+                      backgroundColor: "rgba(0, 128, 175, 0.17)",
+                    }}
+                  >
+                    Internship Seeker
+                  </span>
+                  <span
+                    className="Fields"
+                    style={{
+                      color: "#e7212c",
+                      backgroundColor: "rgba(231, 33, 44, 0.18)",
+                    }}
+                  >
+                    Environmental Change Maker
+                  </span>
+                </center>
+              </div>
+
+              <br />
+              
+              <h3 className="PEEKaMEET-lets-you-n">
+                Build and manage your network with PEEKaMEET
+              </h3>
+
+              <br />
+              <label style={{ fontSize: "10px" }}>
+                <b>Email</b>
+              </label>
+              <br />
+              <input
+                type="email"
+                onChange={(event) => this.getEmail(event.target.value)}
+                value={this.state.email}
+                style={{
+                  width: "100%",
+                  border: "solid 1px #1cb54f",
+                  height: "25px",
+                  borderRadius: "3px",
+                  padding: "4px",
+                }}
+              />
+              <br />
+              <label style={{ fontSize: "10px" }}>
+                <b>Password</b>
+              </label>
+              <br />
+              <input
+                type="password"
+                onChange={(event) => this.getPassword(event.target.value)}
+                value={this.state.password}
+                style={{
+                  width: "100%",
+                  border: "solid 1px #1cb54f",
+                  height: "25px",
+                  borderRadius: "3px",
+                  padding: "4px",
+                }}
+              />
+              <br />
+              <br />
+              
+              <Redirect to={this.state.redirect}></Redirect>
+              <button className="ButtonSignin" onClick={this.getUserDetails}>
+                Sign In
+              </button>
+
+              <div
+                style={{
+                  display: "flex",
+                  marginTop: "4px",
+                  alignItems: "center",
+                }}
+              >
+                <input type="checkbox" /> &nbsp;
+                <label className="Remember-Me">Remember Me</label>
+                <h5 className="Forgot-Password">Forgot Password</h5>
+              </div>
+              <center className="Dont-have-an-account">
+                Don’t have an account? &nbsp;
+                <b style={{ color: "#152d4e" }}>Sign Up</b>
               </center>
             </div>
 
-            <br />
-            <h3 className="PEEKaMEET-lets-you-n">
-              Build and manage your network with PEEKaMEET
-            </h3>
-
-            <br />
-            <label style={{ fontSize: "10px" }}>
-              <b>Email</b>
-            </label>
-            <br />
-            <input
-              type="email"
-              onChange={(event) => this.getEmail(event.target.value)}
-              style={{
-                width: "100%",
-                border: "solid 1px #1cb54f",
-                height: "25px",
-                borderRadius: "3px",
-              }}
-            />
-            <br />
-            <label style={{ fontSize: "10px" }}>
-              <b>Password</b>
-            </label>
-            <br />
-            <input
-              type="password"
-              onChange={(event) => this.getPassword(event.target.value)}
-              style={{
-                width: "100%",
-                border: "solid 1px #1cb54f",
-                height: "25px",
-                borderRadius: "3px",
-              }}
-            />
-            <br />
-            <br />
-      
-              <button className="ButtonSignin" onClick={this.signIn}>Sign In</button>
-            
-
-            <div
-              style={{
-                display: "flex",
-                marginTop: "4px",
-                alignItems: "center",
-              }}
-            >
-              <input type="checkbox" /> &nbsp;
-              <label className="Remember-Me">Remember Me</label>
-              <h5 className="Forgot-Password">Forgot Password</h5>
+            <div className="ScreenImage">
+              <img src={Mainimage} alt="Workimage" />
             </div>
-            <center className="Dont-have-an-account">
-              Don’t have an account? &nbsp;
-              <b style={{ color: "#152d4e" }}>Sign Up</b>
-            </center>
           </div>
-
-          <div className="ScreenImage">
-            <img src={Mainimage} alt="Workimage" />
-          </div>
+          <Footer />
         </div>
-        <Footer/>
-        
-      </div>
-    </Fragment>
-  );
-            }
+      </Fragment>
+    );
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getSignInDetails: (email, password) =>
+      dispatch(getSignInDetails(email, password)),
+  };
 };
 
-export default SignIn;
+const mapStateToProps = (state) => {
+  return {
+    userData: state.user,
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
