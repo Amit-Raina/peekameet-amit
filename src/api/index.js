@@ -1,9 +1,6 @@
 import axios from "axios";
 
-// const data = {
-//   email: "pragyanshu.sharma@daffodilsw.com",
-//   password: "Qwerty123@",
-// };
+
 
 export function signIn(email,password) {
   axios

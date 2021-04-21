@@ -11,9 +11,7 @@ import more_options from "../../assets/more_options.png";
 import { connect } from "react-redux";
 
 class Usercard extends Component {
-
   render() {
-    console.log(this.props.userData);
     return (
       <Fragment>
         <div className="scroll">
@@ -37,7 +35,10 @@ class Usercard extends Component {
 
             <div className="User_Name_card">
               <center>
-                <h3>{this.props.userData.data[0].customer.firstName}{" "}{this.props.userData.data[0].customer.lastName}</h3>
+                <h3>
+                  {this.props.userData.data[0].customer.firstName}{" "}
+                  {this.props.userData.data[0].customer.lastName}
+                </h3>
                 <h5>{this.props.userData.data[0].customer.jobTitle}</h5>
                 <h5>{this.props.userData.data[0].customer.company}</h5>
               </center>
@@ -47,7 +48,7 @@ class Usercard extends Component {
               <button className="button_msg">
                 <img src={nav_messages} alt="contact" />
                 &nbsp;&nbsp;&nbsp;
-                <h4>Mesage</h4>
+                <h4>Message</h4>
               </button>
 
               <button className="button_save">
@@ -93,5 +94,12 @@ const mapStateToProps = (state) => {
     userData: state.user,
   };
 };
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     getUserNoteList: (createdFor, Authorization) =>
+//       dispatch(getUserNoteList(createdFor, Authorization)),
+//   };
+// };
 
 export default connect(mapStateToProps, null)(Usercard);

@@ -11,8 +11,10 @@ import nav_notification from "../../../assets/nav-notifications.png";
 import nav_menu from "../../../assets/nav-menu.png";
 
 import { NavLink } from "react-router-dom";
+import {signOut} from '../../../actions/index';
+import {connect} from 'react-redux';
 
-const HeaderUser = () => {
+const HeaderUser = (props) => {
   return (
     <Fragment>
       <div className="HeaderUser">
@@ -61,7 +63,7 @@ const HeaderUser = () => {
 
           <NavLink to="/" style={{textDecoration:"none"}}>
             <div className="User-signout">
-              <h4>Sign Out</h4>
+              <h4 onClick={()=>{props.signOut(null)}}>Sign Out</h4>
             </div>
           </NavLink>
 
@@ -74,4 +76,10 @@ const HeaderUser = () => {
   );
 };
 
-export default HeaderUser;
+const mapDispatchToProps= (dispatch) => {
+  return {
+signOut : (data) => dispatch(signOut(data)),
+  }
+}
+
+export default connect(null,mapDispatchToProps)(HeaderUser);
