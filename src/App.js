@@ -6,6 +6,7 @@ import SignIn from "../src/Components/SignIn/SignIn";
 import UserProfile from "../src/Components/UserProfile/UserProfile";
 import UserNotes from "../src/Components/Notes/Notes";
 import AddNote from "../src/Components/AddNote/AddNote";
+import UpdateNote from "../src/Components/UpdateNote/UpdateNote";
 
 import { connect } from "react-redux";
 
@@ -19,6 +20,7 @@ class App extends Component {
         {this.props.userData !== null && <Route path="/user-details" component={UserProfile} />}
         {this.props.userData !== null && <Route path="/user-notes" component={UserNotes} />}
          {this.props.userData !== null &&  <Route path="/user-add-notes" component={AddNote} />}
+         {this.props.userData !== null &&  <Route path="/user-update-notes" component={UpdateNote} />}
           <Route path="/" component={SignIn} />
         </Switch>
       </Fragment>

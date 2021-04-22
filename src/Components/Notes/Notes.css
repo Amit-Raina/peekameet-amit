@@ -1,4 +1,4 @@
-.MainUser{
+.MainUser {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,18 +8,18 @@
   width: 100%;
 }
 
-.Notes_Holder{
+.Notes_Holder {
   margin-left: 15px;
   margin-top: 12px;
 }
 
-.Edit_Notes{
+.Edit_Notes {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.Edit_Notes_title{
+.Edit_Notes_title {
   font-size: 14px;
   font-weight: 500;
   font-stretch: normal;
@@ -29,10 +29,30 @@
   color: #1cb54f;
 }
 
-.Notes_list{
+.Notes_list {
   margin-top: 20px;
 }
-  
-  
 
-  
+.notesPagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  margin-bottom: 10px;
+}
+.back {
+width: 50px;
+height: 30px;
+background-color: #1cb54f ;
+color: white;
+border: 0;
+border-radius: 3px;
+}
+.forward {
+  width: 50px;
+  height: 30px;
+  background-color: #1cb54f ;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+}

@@ -61,11 +61,11 @@ const HeaderUser = (props) => {
             <h4>Notifications</h4>
           </div>
 
-          <NavLink to="/" style={{textDecoration:"none"}}>
+          <a href="/" style={{textDecoration:"none"}}>
             <div className="User-signout">
               <h4 onClick={()=>{props.signOut(null)}}>Sign Out</h4>
             </div>
-          </NavLink>
+            </a>
 
           <div className="User-menu">
             <img src={nav_menu} alt="menu" />

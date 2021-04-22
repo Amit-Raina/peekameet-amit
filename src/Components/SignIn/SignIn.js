@@ -2,20 +2,20 @@ import { Fragment, Component } from "react";
 import "./SignIn.css";
 import Mainimage from "../../assets/screenPhoto.png";
 // import { browserHistory } from 'react-router';
-import Spinner from '../../Spinner/Spinner';
-import { Redirect  } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
+import { Redirect } from "react-router-dom";
 import Footer from "../../Reusable_Components/Footer/Footer";
 import HeaderSignIn from "../../Reusable_Components/Header/HeaderSignIn/HeaderSignIn";
-import { getSignInDetails , getUserNoteList } from "../../actions/index";
+import { getSignInDetails, getUserNoteList } from "../../actions/index";
 
 import { connect } from "react-redux";
 
 class SignIn extends Component {
   state = {
-    email: "pragyanshu.sharma@daffodilsw.com",
-    password: "Qwerty123@",
+    email: "",
+    password: "",
     redirect: "/",
-    loading:false
+    loading: false,
   };
 
   getEmail = (value) => {
@@ -31,22 +31,31 @@ class SignIn extends Component {
   };
 
   getUserDetails = () => {
-    this.props.getSignInDetails(this.state.email, this.state.password);    
-    this.setState({
-      loading:true
-    })
-    setTimeout(() => {
-      if(this.props.userData.httpCode === 200){
-        this.props.getUserNoteList(
-          this.props.userData.data[0].customer._id,
-          this.props.userData.data[0].token
-        );
-        this.setState({
-          redirect:"/user-details",
-          loading:false
-        })
-      }
-    },3000)
+    try {
+      this.props.getSignInDetails(this.state.email, this.state.password);
+      this.setState({
+        loading: true,
+      });
+      setTimeout(() => {
+        if (this.props.userData!== null && this.props.userData.httpCode === 200) {
+          this.props.getUserNoteList(
+            this.props.userData.data[0].customer._id,
+            this.props.userData.data[0].token
+          );
+          this.setState({
+            redirect: "/user-details",
+            loading: false,
+          });
+        } else {
+          this.setState({
+            redirect: "/",
+            loading: false,
+          });
+        }
+      }, 3000);
+    } catch (e) {
+      alert("Server took long to respond ! Login again");
+    }
   };
 
   render() {
@@ -121,7 +130,7 @@ class SignIn extends Component {
               </div>
 
               <br />
-              
+
               <h3 className="PEEKaMEET-lets-you-n">
                 Build and manage your network with PEEKaMEET
               </h3>
@@ -162,7 +171,7 @@ class SignIn extends Component {
               />
               <br />
               <br />
-              
+
               <Redirect to={this.state.redirect}></Redirect>
               <button className="ButtonSignin" onClick={this.getUserDetails}>
                 Sign In
@@ -187,7 +196,7 @@ class SignIn extends Component {
 
             <div className="ScreenImage">
               <img src={Mainimage} alt="Workimage" />
-              {this.state.loading?<Spinner></Spinner>:""}
+              {this.state.loading ? <Spinner></Spinner> : ""}
             </div>
           </div>
           <Footer />
@@ -201,9 +210,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getSignInDetails: (email, password) =>
       dispatch(getSignInDetails(email, password)),
-      getUserNoteList: (createdFor, Authorization) =>
+    getUserNoteList: (createdFor, Authorization) =>
       dispatch(getUserNoteList(createdFor, Authorization)),
-      
   };
 };
 

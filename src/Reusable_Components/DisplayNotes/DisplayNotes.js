@@ -4,8 +4,8 @@ import dots from "../../assets/3-dot.png";
 
 const DisplayNotes = (props) => {
   return (
-    <Fragment>
-      <div className="Display_Single_note">
+    <Fragment >
+      <div className="Display_Single_note" onClick={props.onPress}>
         <div className="Display_Content">
           <div className="Inside_text">
             <p>{props.text} </p>

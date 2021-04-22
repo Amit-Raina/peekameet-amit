@@ -1,4 +1,4 @@
-import { ADDNOTE, GETNOTES, SIGNINRESPONSE } from "../constants/index";
+import { ADDNOTE, GETNOTES, SIGNINRESPONSE, UPDATENOTE } from "../constants/index";
 import axios from "axios";
 
 export function signInResponse(user) {
@@ -22,6 +22,13 @@ export function getNotes(notes) {
   };
 }
 
+export function updateNote(updatedNote) {
+  return {
+    type: UPDATENOTE,
+    updatedNote,
+  };
+}
+
 export const getSignInDetails = (email, password) => {
   return (dispatch) => {
     axios
@@ -36,7 +43,10 @@ export const getSignInDetails = (email, password) => {
         dispatch(signInResponse(response.data));
       })
       .catch((err) => {
-        alert("Invalid Email and Password");
+        dispatch(signInResponse(null));
+        setTimeout(() => {
+          alert("Invalid Email and Password");
+        }, 2000);
       });
   };
 };
@@ -98,5 +108,29 @@ export const addNewUserNote = (
 export const signOut = (data) => {
   return (dispatch) => {
     dispatch(signInResponse(data));
+  };
+};
+
+export const editNote = (noteId, noteText, Authorization) => {
+  const body = {
+    noteText: noteText,
+  };
+  return (dispatch) => {
+    axios
+      .put(
+        `http://apipeekameet.cloudzmall.com:3001/peekameet/api/v1/followUpNote/${noteId}`,
+        body,
+        {
+          headers: {
+            Authorization: Authorization,
+          },
+        }
+      )
+      .then((response) => { 
+           dispatch(updateNote(response));
+      })
+      .catch((err) => {
+        alert("Not Updated , Please Re Login");
+      });
   };
 };
