@@ -18,6 +18,20 @@ class SignIn extends Component {
     loading: false,
   };
 
+  checkSignValidity = () => {
+    if (this.state.email === "") {
+      alert("Please Enter email !");
+      return false;
+    }
+
+    if (this.state.password === "") {
+      alert("Please Enter password !");
+      return false;
+    }
+
+    return true;
+  };
+
   getEmail = (value) => {
     this.setState({
       email: value,
@@ -32,27 +46,34 @@ class SignIn extends Component {
 
   getUserDetails = () => {
     try {
-      this.props.getSignInDetails(this.state.email, this.state.password);
-      this.setState({
-        loading: true,
-      });
-      setTimeout(() => {
-        if (this.props.userData!== null && this.props.userData.httpCode === 200) {
-          this.props.getUserNoteList(
-            this.props.userData.data[0].customer._id,
-            this.props.userData.data[0].token
-          );
-          this.setState({
-            redirect: "/user-details",
-            loading: false,
-          });
-        } else {
-          this.setState({
-            redirect: "/",
-            loading: false,
-          });
-        }
-      }, 3000);
+      if (this.checkSignValidity()) {
+        this.props.getSignInDetails(this.state.email, this.state.password);
+        this.setState({
+          loading: true,
+        });
+        setTimeout(() => {
+          if (
+            this.props.userData !== null &&
+            this.props.userData.httpCode === 200
+          ) {
+            this.props.getUserNoteList(
+              this.props.userData.data[0].customer._id,
+              this.props.userData.data[0].token
+            );
+            this.setState({
+              redirect: "/user-details",
+              loading: false,
+            });
+          } else {
+            this.setState({
+              redirect: "/",
+              loading: false,
+            });
+          }
+        }, 3000);
+      } else {
+        
+      }
     } catch (e) {
       alert("Server took long to respond ! Login again");
     }
