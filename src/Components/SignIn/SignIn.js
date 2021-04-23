@@ -1,7 +1,6 @@
 import { Fragment, Component } from "react";
 import "./SignIn.css";
 import Mainimage from "../../assets/screenPhoto.png";
-// import { browserHistory } from 'react-router';
 import Spinner from "../../Spinner/Spinner";
 import { Redirect } from "react-router-dom";
 import Footer from "../../Reusable_Components/Footer/Footer";
@@ -12,8 +11,8 @@ import { connect } from "react-redux";
 
 class SignIn extends Component {
   state = {
-    email: "",
-    password: "",
+    email: "pragyanshu.sharma@daffodilsw.com",
+    password: "Qwerty123@",
     redirect: "/",
     loading: false,
   };
@@ -27,9 +26,25 @@ class SignIn extends Component {
     if (this.state.password === "") {
       alert("Please Enter password !");
       return false;
+    } else if (this.state.password.length >= 8) {
+      if (this.state.password.includes("1")) return true;
+      else if (this.state.password.includes("2")) return true;
+      else if (this.state.password.includes("3")) return true;
+      else if (this.state.password.includes("4")) return true;
+      else if (this.state.password.includes("5")) return true;
+      else if (this.state.password.includes("6")) return true;
+      else if (this.state.password.includes("7")) return true;
+      else if (this.state.password.includes("8")) return true;
+      else if (this.state.password.includes("9")) return true;
+      else if (this.state.password.includes("0")) return true;
+      else {
+        alert("Password must contain a number !");
+        return false;
+      }
     }
-
-    return true;
+    else{
+      alert("Password must be atleast 8 characters long !")
+    }
   };
 
   getEmail = (value) => {
@@ -72,7 +87,6 @@ class SignIn extends Component {
           }
         }, 3000);
       } else {
-        
       }
     } catch (e) {
       alert("Server took long to respond ! Login again");

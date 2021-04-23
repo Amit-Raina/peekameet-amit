@@ -11,12 +11,14 @@ import note_date from "../../assets/note_date.png";
 import { addNewUserNote, getUserNoteList } from "../../actions/index";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
 
 class AddNote extends Component {
   state = {
     messageData: "",
     messageFollowUp: "",
     messageTime: "",
+    loading: false,
   };
 
   getUserMessage = (value) => {
@@ -56,6 +58,9 @@ class AddNote extends Component {
   };
 
   sendNoteRequest = () => {
+    this.setState({
+      loading: true,
+    });
     if (this.checkValidity()) {
       this.props.addNewUserNote(
         this.props.userData.data[0].customer._id,
@@ -68,11 +73,15 @@ class AddNote extends Component {
         this.props.userData.data[0].customer._id,
         this.props.userData.data[0].token
       );
-      this.setState({
-        messageData: "",
-        messageFollowUp: "",
-        messageTime: "",
-      });
+
+      setTimeout(() => {
+        this.setState({
+          loading: false,
+          messageData: "",
+          messageFollowUp: "",
+          messageTime: "",
+        });
+      }, 3000);
     }
   };
 
@@ -82,6 +91,11 @@ class AddNote extends Component {
         <div className="MainAddNote">
           <HeaderUser />
           <div className="scroll">
+            {this.state.loading ? (
+              <Spinner style={{ top: "40%", left: "49%" }}></Spinner>
+            ) : (
+              ""
+            )}
             <div className="UserCard">
               <div className="NoteTitle">
                 <p>Add Note</p>
