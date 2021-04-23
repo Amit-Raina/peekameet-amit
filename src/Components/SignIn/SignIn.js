@@ -11,8 +11,8 @@ import { connect } from "react-redux";
 
 class SignIn extends Component {
   state = {
-    email: "pragyanshu.sharma@daffodilsw.com",
-    password: "Qwerty123@",
+    email: "",
+    password: "",
     redirect: "/",
     loading: false,
   };
