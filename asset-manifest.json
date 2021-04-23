@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/peekameet-amit/static/css/main.201b0803.chunk.css",
+    "main.js": "/peekameet-amit/static/js/main.03183520.chunk.js",
+    "main.js.map": "/peekameet-amit/static/js/main.03183520.chunk.js.map",
+    "runtime-main.js": "/peekameet-amit/static/js/runtime-main.c8ad6dc2.js",
+    "runtime-main.js.map": "/peekameet-amit/static/js/runtime-main.c8ad6dc2.js.map",
+    "static/js/2.2705efc0.chunk.js": "/peekameet-amit/static/js/2.2705efc0.chunk.js",
+    "static/js/2.2705efc0.chunk.js.map": "/peekameet-amit/static/js/2.2705efc0.chunk.js.map",
+    "static/js/3.cf30c47f.chunk.js": "/peekameet-amit/static/js/3.cf30c47f.chunk.js",
+    "static/js/3.cf30c47f.chunk.js.map": "/peekameet-amit/static/js/3.cf30c47f.chunk.js.map",
+    "index.html": "/peekameet-amit/index.html",
+    "static/css/main.201b0803.chunk.css.map": "/peekameet-amit/static/css/main.201b0803.chunk.css.map",
+    "static/js/2.2705efc0.chunk.js.LICENSE.txt": "/peekameet-amit/static/js/2.2705efc0.chunk.js.LICENSE.txt",
+    "static/media/peekameet_logo.1ae3c39b.png": "/peekameet-amit/static/media/peekameet_logo.1ae3c39b.png",
+    "static/media/screenPhoto.ac6ff9ce.png": "/peekameet-amit/static/media/screenPhoto.ac6ff9ce.png",
+    "static/media/user.68cdc451.png": "/peekameet-amit/static/media/user.68cdc451.png",
+    "static/media/userbackground.990eb6fe.png": "/peekameet-amit/static/media/userbackground.990eb6fe.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c8ad6dc2.js",
+    "static/js/2.2705efc0.chunk.js",
+    "static/css/main.201b0803.chunk.css",
+    "static/js/main.03183520.chunk.js"
+  ]
+}
